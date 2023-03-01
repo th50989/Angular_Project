@@ -1,0 +1,28 @@
+<p>formemail works!</p>
+<form [formGroup] ="insertFrm" (ngSubmit)="SignUp()">
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" class="form-control" from aria-describedby="UserNameHelp" placeholder="Enter Email" formControlName="Email" >
+        <div *ngIf="insertFrm.controls['Email'].hasError('required') && (insertFrm.controls['Email'].dirty||insertFrm.controls['Email'].touched)">
+            <small *ngIf="insertFrm.controls['Email'].hasError('required')" class="text-danger">Email is required.</small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Password">Password</label>
+        <input type="text" class="form-control" from aria-describedby="UserNameHelp" placeholder="Enter Password" formControlName="Password" >
+        <div *ngIf="insertFrm.controls['Password'].hasError('required')&& (insertFrm.controls['Password'].dirty||insertFrm.controls['Password'].touched) ">
+            <small *ngIf="insertFrm.controls['Password'].hasError('required')" class="text-danger">Password is required.</small>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="Confirmpassword">Confirm password</label>
+        <input type="text" class="form-control" from aria-describedby="UserNameHelp" placeholder="Confirmpassword" formControlName="Confirmpassword" >
+        <div *ngIf="insertFrm.controls['Confirmpassword'].hasError('required')&& (insertFrm.controls['Confirmpassword'].dirty||insertFrm.controls['Confirm password'].touched) ">
+            <small *ngIf="insertFrm.controls['Confirmpassword'].hasError('required')" class="text-danger">Confirm password is required.</small>
+        </div>
+    </div>
+
+    <input type ="submit" [disabled]="!insertFrm.valid" value="SignUp" class="btn btn-primary">
+  
+</form>
