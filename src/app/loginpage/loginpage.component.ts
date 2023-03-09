@@ -30,7 +30,7 @@ export class LoginpageComponent implements OnInit {
   gglogin() {
     console.log('1');
     this.authService.gglogin().then(user => {console.log('function');console.log(user);
-        this.router.navigate([""]);}
+        this.router.navigate(["/home"]);}
         // location.href = "/home"
         ).catch(err => {
         console.log(err);

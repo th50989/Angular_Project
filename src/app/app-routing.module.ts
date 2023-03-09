@@ -12,7 +12,7 @@ import { TablepageComponent } from './tablepage/tablepage.component';
 
 const routes: Routes = [
  
-  {path:'i',component:MainLayoutComponent,
+  {path:'',component:MainLayoutComponent,
   canActivate:[AuthGuard],  
   children:[
   {path:'node',component:SevicescomponentComponent},
